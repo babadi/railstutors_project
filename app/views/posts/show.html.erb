@@ -1,0 +1,10 @@
+<h2>
+	<%= link_to @post.title, @post.url %>
+</h2>
+<h3><%= comment_count_for(@post) %></h3>
+<ul>
+	<% @post.comments.each do |comment| %>
+		<li><%= comment.content %></li>
+	<% end %>
+</ul>
+
