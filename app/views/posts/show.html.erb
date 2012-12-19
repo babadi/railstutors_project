@@ -1,6 +1,7 @@
 <h2>
 	<%= link_to @post.title, @post.url %>
 </h2>
+
 <h3><%= comment_count_for(@post) %></h3>
 <ul>
 	<% @post.comments.each do |comment| %>
@@ -8,3 +9,9 @@
 	<% end %>
 </ul>
 
+<h3>Post a comment</h3>
+<%= form_for [@post,@comment] do |f| %>
+<%= f.text_area :content, rows: 5 %>
+<br/>
+<%= f.submit "Post" %>
+<% end %>
