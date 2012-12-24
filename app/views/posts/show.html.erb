@@ -1,17 +1,22 @@
-<h2>
-	<%= link_to @post.title, @post.url %>
-</h2>
+<%= render @post %>
 
-<h3><%= comment_count_for(@post) %></h3>
+<% if @post.comments.count > 0 %>
+<h3>Comments</h3>
+
+<div class="comments">
 <ul>
 	<% @post.comments.each do |comment| %>
 		<li><%= comment.content %></li>
 	<% end %>
 </ul>
+</div>
+<% end %>
 
+<div class="comment_form">
 <h3>Post a comment</h3>
 <%= form_for [@post,@comment] do |f| %>
 <%= f.text_area :content, rows: 5 %>
 <br/>
 <%= f.submit "Post" %>
 <% end %>
+</div>

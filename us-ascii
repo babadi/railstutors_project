@@ -1,0 +1,100 @@
+[1,2].last
+'foo #{3}'
+"foo #{3.times {puts 3}}"
+Foo.call
+def Foo
+puts 123
+Foo
+def Foo(a)
+puts a
+Foo(123)
+Integer.class
+Integer("as")
+class foo
+def lala
+class Foo
+@lala = 1
+def self.lala
+@lala
+end
+Foo.lala
+Post.add(url: "http://google.com/", title: "The Google")
+Post.create(url: "http://google.com/", title: "The Google")
+Post.create(url: "http://yahoo.com/", title: "Yahoo")
+Post.create url: "http://bing.com", title: "Bing"
+Post.find(1)
+Post.find(1).destroy
+Post.delete
+nil.is_a?
+nil.is_a?(String)
+nil.nil?
+nil.empty?
+p.comments.methods
+p.comments.methods.sort
+pp
+pp p.comments.methods.sort
+p.comments.fortytwo
+p.comments.forty_two
+p.comments.tenth
+p.comments.fifth
+p.comments.ninth
+p.comments.eighth
+p.comments.sixth
+p.comments.fourth
+#p.comments << "OHAI! This is my comment about stuff."
+p.name
+p.title
+#p.comments << "OHAI! This is my comment about google."
+~#p.comments << "OHAI! This is my comment about google."
+p.comments << "OHAI! This is my comment about google."
+p.comments << Comment.create("OHAI! This is my comment about google.")
+p.comments << Comment.create(:content => "OHAI! This is my comment about google.")
+p.comments
+Comments.first
+Comment.first
+Comment.first.post.title
+Post.first.reload
+Post.first.comments.create
+Post.first.comments.methods.sort
+Post
+Post.first
+Post.first.saved?
+Post.first.dirty?
+Post.first.new_record?
+Post.new.new_record?
+Post.new.id
+Post.where(:title => nil).count
+Post.delete.where(:title => nil).count
+Post.where(:title => nil).delete
+Post.delete_where(:title => nil)
+Post.where(:title => nil).delete_all
+Post.first.id
+Post.first.comments
+Post.first.comments.build
+Post.first.comments.new
+Comment.where(:content => nil)
+Comment.where(:content => '')
+Comment.where(:content => nil).delete_all
+Comment.where(:content => '').delete_all
+p.vote
+p = Post.first
+p.votes
+p.all
+Post.all
+Post.find_by_title("FooSite").count
+Post.find_by_title("FooSite").size
+Post.find_by_title("FooSite")
+Post.find_all_by_title("FooSite")
+Post.find_all_by_title("FooSite").size
+Post.find_count
+[].size
+[].count
+Post.find_all_by_title("FooSite").count
+p
+reload!
+p.score
+Vote
+Post.first.score
+:LALA
+:lala
+quit

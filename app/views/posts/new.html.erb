@@ -1,8 +1,7 @@
-<h1>Submit</h1>
+<h3>Submit</h3>
 <%= form_for(@post) do |f| %>
-	<%= f.label :title, "Title" %> <%= f.text_field :title %>
+	<%= f.label :title %> <%= f.text_field :title %>
 	<%= f.label :url, "URL" %> <%= f.text_field :url %>
 	<br/><br/>
 	<%= f.submit %>
 <% end %>
-	

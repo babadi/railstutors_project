@@ -1,3 +1,61 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post_header {
+	border: black 1px dashed;
+	border-radius: 5px;
+	padding: 0;
+	margin: 0 0 5px 0;
+}
+
+.post_header:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+
+.post_header p {
+	font-size: 0.8em;
+	line-height: 1.3em;
+	padding: 0;
+	margin: 0;
+}
+
+.title {
+	font-size: 1.5em;
+}
+
+.vote_panel {
+	font-weight: bold;
+	float: left;
+	width: 20px;
+	margin: 0 5px;	
+}
+
+.vote_count {
+	text-align: center;
+	width: 100%;
+	display: inline-block;
+}
+
+
+.vote_panel form {
+	padding: 0;
+	margin: 0;
+}
+
+.entry {
+	overflow: hidden;
+}
+
+.vote-button {
+	border: none;
+	background-color: transparent;
+	margin: 0 auto;
+	display: block;
+}

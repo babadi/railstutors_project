@@ -1,0 +1,15 @@
+<div class="post_header">
+	<div class="vote_panel">
+	<% vote = post.votes.new %>
+	<%= form_for [post,vote] do |f| %>
+	<%= f.button "", :name => 'type_value', :value => Vote::UPVOTE_VALUE, :class => "icon-arrow-up vote-button" %>
+	<div class="vote_count"><%= post.score %></div>
+	<%= f.button "", :name => 'type_value', :value => Vote::DOWNVOTE_VALUE, :class => "icon-arrow-down vote-button" %>
+	<% end %>
+	</div>
+	<div class="entry">
+		<div class="title"><%= link_to post.title, post.url %></div>
+		<p class="submission_details">Posted <%= time_ago_in_words(post.updated_at) %> ago</p>
+		<p class="submission_details"><%= link_to comment_count_for(post), post %></p>
+	</div>
+</div>
