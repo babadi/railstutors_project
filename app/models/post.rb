@@ -20,4 +20,8 @@ class Post < ActiveRecord::Base
     votes.where(vote_type: Vote::UPVOTE_VALUE).count -
       votes.where(vote_type: Vote::DOWNVOTE_VALUE).count
   end
+
+  def <=>(rhs) #sort in reverse order by score
+    rhs.score <=> self.score
+  end
 end
