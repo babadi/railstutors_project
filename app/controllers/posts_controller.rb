@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-  	@posts = Post.all.sort
+  	@posts = Post.order('created_at desc').limit(50) #TODO fixme
   end
 
   def show

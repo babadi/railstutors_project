@@ -1,5 +1,6 @@
 <%= render @post %>
-
+	
+<a name="comments"></a>
 <% if @post.comments.count > 0 %>
 <h3>Comments</h3>
 
@@ -10,6 +11,8 @@
 	<% end %>
 </ul>
 </div>
+<% else %>
+<h3>No comments yet</h3>
 <% end %>
 
 <div class="comment_form">
