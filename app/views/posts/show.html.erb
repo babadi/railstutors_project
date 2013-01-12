@@ -18,6 +18,7 @@
 <h3>No comments yet</h3>
 <% end %>
 
+<% if logged_in? %>
 <div class="comment_form">
 <h3>Post a comment</h3>
 <%= form_for [@post,@comment] do |f| %>
@@ -26,3 +27,4 @@
 <%= f.submit "Post" %>
 <% end %>
 </div>
+<% end %>
