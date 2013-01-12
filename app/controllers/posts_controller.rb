@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  before_filter :require_user, only: [:new, :create] 
+
   def index
-  	@posts = Post.order('created_at desc').limit(50).sort #TODO fixme
+  	@posts = Post.order('created_at desc').limit(50).sort
   end
 
   def show
@@ -15,6 +17,7 @@ class PostsController < ApplicationController
 
   def create
   	@post = Post.new(params[:post])
+    @post.user = current_user
     if @post.save
       redirect_to @post
     else

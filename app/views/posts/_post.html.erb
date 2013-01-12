@@ -10,7 +10,7 @@
 	<div class="entry">
 		<div class="title"><%= url_link_for(post) %></div>
 		<div class="submission_details">
-			<p>Posted <%= time_ago_in_words(post.updated_at) %> ago</p>
+			<p>Posted <%= time_ago_in_words(post.updated_at) %> ago by <%= post.user.username %></p>
 			<p><%= link_to comment_count_for(post), post_url(post, anchor: 'comments') %></p>
 		</div>
 	</div>

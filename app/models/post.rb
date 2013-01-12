@@ -2,18 +2,18 @@ class Post < ActiveRecord::Base
   attr_accessible :title, :url
   has_many :comments
   has_many :votes
+  belongs_to :user
+
   validates :title, presence: true
   validates :url, presence: true, format: URI::regexp(%w(http https))
   before_validation :urlify
 
-  HUMANIZED_ATTRIBUTES = { :url => "URL" }
-  
   def self.human_attribute_name(attr, options={})
-    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
+    attr.to_sym == :url ? "URL" : super
   end
 
   def urlify
-    self.url = "http://#{url}" unless url =~ /^https?:\/\//
+    self.url = "http://#{url}" unless url.empty? || url =~ /^https?:\/\//
   end
 
   def score
@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
       votes.where(vote_type: Vote::DOWNVOTE_VALUE).count
   end
 
-  def <=>(rhs) #sort in reverse order by score
+  def <=>(rhs) #display in reverse order by score
     rhs.score <=> self.score
   end
 end
