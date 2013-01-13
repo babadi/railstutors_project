@@ -6,7 +6,7 @@ CourseProject::Application.routes.draw do
   	resources :votes, only: :create
   end
 
-  resources :users, only: :create
+  resources :users, only: [:create, :show]
   get 'register', to: 'users#new', as: 'register'
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'

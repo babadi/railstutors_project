@@ -3,4 +3,5 @@ class Vote < ActiveRecord::Base
 	UPVOTE_VALUE = 1
 	attr_accessible :post_id, :vote_type
 	belongs_to :post
+	belongs_to :user
 end

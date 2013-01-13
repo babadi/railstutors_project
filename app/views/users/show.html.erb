@@ -1,0 +1,35 @@
+<h3><%= @user.username %>'s Profile</h3>
+<p><em>Joined <%= time_ago_in_words(@user.created_at) %> ago</em></p>
+
+<h3>Recent Posts</h3>
+<% if @user.posts.size > 0 %>
+	<ul>
+		<% @user.posts.order('created_at desc').limit(10).each do |p| %>
+			<li><%= link_to p.title, p.url %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p><em>No posts</em></p>
+<% end %>
+
+<h3>Recent Comments</h3>
+<% if @user.comments.size > 0 %>
+	<ul>
+		<% @user.comments.order('created_at desc').limit(10).each do |c| %>
+			<li>On <%= url_link_for(c.post) %>: <%= c.content %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p><em>No comments</em></p>
+<% end %>
+
+<h3>Recent Votes</h3>
+<% if @user.votes.size > 0 %>
+	<ul>
+		<% @user.votes.order('created_at desc').limit(10).each do |v| %>
+			<li><%= v.vote_type == Vote::DOWNVOTE_VALUE ? 'Downvoted' : 'Upvoted' %> <%= url_link_for(v.post) %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<p><em>No votes</em></p>
+<% end %>

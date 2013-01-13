@@ -8,7 +8,7 @@
 <ul>
 	<% @post.comments.each do |comment| %>
 		<li>
-			<i><%= comment.user.username %> says: </i>  
+			<em><%= comment.user.username %> says: </em>  
 			<%= comment.content %>
 		</li>
 	<% end %>
