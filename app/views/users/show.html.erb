@@ -33,3 +33,12 @@
 <% else %>
 	<p><em>No votes</em></p>
 <% end %>
+
+<% if @user.twitter_handle %>
+	<h3>Recent Tweets (<%= @user.twitter_handle %>)</h3>
+	<ul>
+		<% Twitter.user_timeline(@user.twitter_handle).first(10).each do |timeline| %>
+		<li><%= timeline.text %></li>
+	<% end %>
+	</ul>
+<% end %>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :password, :username
-  validates :username, presence: true
+  attr_accessible :password, :username, :twitter_handle
+  validates :username, presence: true, uniqueness: true
   has_many :posts
   has_many :comments
   has_many :votes
